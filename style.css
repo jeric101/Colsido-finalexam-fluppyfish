@@ -1,0 +1,236 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.background {
+	height: 100vh;
+	width: 100vw;
+	background: url('assets/bg.jpg') no-repeat center center fixed;
+	object-fit: fill; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: -1;
+}
+.fish {
+    height: 70px;
+    width: 90px;
+    position: fixed;
+    top: 40vh;
+    left: 30vw;
+    z-index: 100;
+}
+.pipe_sprite {
+	position: fixed;
+	top: 40vh;
+	left: 100vw;
+	height: 400px; 
+	width: 80px;   
+	background: linear-gradient(
+    to right,
+    #2196f3 0%,
+    #42a5f5 20%,
+    #90caf9 50%,
+    #42a5f5 80%,
+    #2196f3 100%
+    );
+	border: 4px solid black;
+}
+.score, .high-score {
+    position: fixed;
+    z-index: 10;
+    height: 5vh;
+    font-size: 3vh;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.score {
+    top: 10px;
+    left: 10px;
+}
+.high-score {
+    top: 10px;
+    right: 10px;
+}
+.score_val {
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+}
+@media only screen and (max-width: 1080px) {
+    .message {
+		font-size: 50px;
+		top: 50%;
+		white-space: nowrap;
+	}
+	.score {
+		font-size: 8vh;
+	}
+	.fish {
+        width: 60px;
+        height: 50px;
+	}
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: rgb(99, 127, 253);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: none;
+    font-size: 3.5vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.start-button, .modal-content .play-again-button {
+    padding: 5px 15px;
+    font-size: 14px;
+}
+.start-button {
+    background-color: #038C4C;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.start-button:hover {
+    background-color: #1b741f;
+}
+.modal-content .play-again-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.modal-content .play-again-button:hover {
+    background-color: #d32f2f;
+}
+.mute-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #3700ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mute-button:hover {
+    background-color: #ff0000;
+    border-color: #666;
+}
+
+.modal-content .start-button,
+.modal-content .play-again-button,
+.modal-content .mute-button {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.modal-content .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .background {
+        background-size: cover;
+    }
+
+    .fish {
+        height: 50px;
+        width: 70px;
+        top: 35vh;
+        left: 25vw;
+    }
+
+    .score, .high-score {
+        height: 4vh;
+        font-size: 2.5vh;
+        padding: 3px;
+    }
+
+    .modal-content {
+        width: 80%;
+        font-size: 3vh;
+        padding: 20px;
+    }
+
+    .start-button, .modal-content .play-again-button, .mute-button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .modal-content .button-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .fish {
+        height: 40px;
+        width: 60px;
+        top: 30vh;
+        left: 20vw;
+    }
+
+    .score, .high-score {
+        height: 3.5vh;
+        font-size: 2vh;
+        padding: 2px;
+    }
+
+    .modal-content {
+        width: 90%;
+        font-size: 2.5vh;
+        padding: 15px;
+    }
+
+    .start-button, .modal-content .play-again-button, .mute-button {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    .modal-content .button-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
